@@ -7,8 +7,13 @@ int main()
 
     Window window("hello world", 600, 400);
 
+    double x, y;
+
     while (!window.closed())
     {
+        window.getMousePos(x, y);
+        std::cout << "(" << x << ", " << y << ")" << std::endl;
+
         window.clear();
         glBegin(GL_TRIANGLES);
         glVertex2f(-1, -1);
