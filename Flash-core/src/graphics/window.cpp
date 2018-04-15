@@ -41,7 +41,7 @@ namespace flash
         {
             if (!glfwInit())
             {
-                std::cout << "Window init error: Fail to init GLFW" << std::endl;
+                std::cout << "Window init error: Failed to init GLFW" << std::endl;
                 return false;
             }
 
@@ -54,6 +54,12 @@ namespace flash
             }
             glfwMakeContextCurrent(m_Window);
             glfwSetWindowSizeCallback(m_Window, windowResize);
+
+            if (glewInit() != GLEW_OK)
+            {
+                std::cout << "Window init error: Failed to init GLEW" << std::endl;
+                return false;
+            }
 
             return true;
         }

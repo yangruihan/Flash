@@ -1,4 +1,4 @@
-#include "src\graphics\window.h"
+#include "src/graphics/window.h"
 
 int main()
 {
