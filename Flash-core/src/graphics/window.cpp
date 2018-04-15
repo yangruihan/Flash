@@ -4,6 +4,8 @@ namespace flash
 {
     namespace graphics
     {
+        void windowResize(GLFWwindow *window, int width, int height);
+
         Window::Window(const char *title, int width, int height)
         {
             m_Title = title;
@@ -25,9 +27,14 @@ namespace flash
             glfwSwapBuffers(m_Window);
         }
 
+        void Window::clear() const
+        {
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        }
+
         bool Window::closed() const
         {
-            return glfwWindowShouldClose(m_Window);
+            return glfwWindowShouldClose(m_Window) == 1;
         }
 
         bool Window::init()
@@ -46,8 +53,14 @@ namespace flash
                 return false;
             }
             glfwMakeContextCurrent(m_Window);
+            glfwSetWindowSizeCallback(m_Window, windowResize);
 
             return true;
+        }
+
+        void windowResize(GLFWwindow *window, int width, int height)
+        {
+            glViewport(0, 0, width, height);
         }
     }
 }

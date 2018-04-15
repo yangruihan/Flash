@@ -1,6 +1,3 @@
-#include <GLWF\glfw3.h>
-#include <iostream>
-
 #include "src\graphics\window.h"
 
 int main()
@@ -12,10 +9,14 @@ int main()
 
     while (!window.closed())
     {
+        window.clear();
+        glBegin(GL_TRIANGLES);
+        glVertex2f(-1, -1);
+        glVertex2f(0, 1);
+        glVertex2f(1, -1);
+        glEnd();
         window.update();
     }
-
-    system("PAUSE");
 
     return 0;
 }
