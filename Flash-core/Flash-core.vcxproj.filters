@@ -13,24 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\math">
+      <UniqueIdentifier>{8e804498-98bc-4c8b-818f-6e18fd5b0c68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\graphic">
+      <UniqueIdentifier>{38cc4179-750b-47c4-8aae-5e9a7c1d9655}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\window.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\math\vector2.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\vector3.cpp">
+      <Filter>源文件\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\vector4.cpp">
+      <Filter>源文件\math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\window.cpp">
+      <Filter>源文件\graphic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\graphics\window.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\math\vector2.h">
-      <Filter>源文件</Filter>
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vector3.h">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vector4.h">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\window.h">
+      <Filter>源文件\graphic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
