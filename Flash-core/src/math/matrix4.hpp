@@ -13,8 +13,8 @@ namespace flash
         private:
             union
             {
-                float elements[4 * 4];
-                vector4 columns[4];
+                float m_Elements[4 * 4];
+                vector4 m_Columns[4];
             };
 
         public:
@@ -25,10 +25,10 @@ namespace flash
             vector4 getColumn(int index)
             {
                 index *= 4;
-                return vector4(elements[index],
-                               elements[index + 1],
-                               elements[index + 2],
-                               elements[index + 3]);
+                return vector4(m_Elements[index],
+                               m_Elements[index + 1],
+                               m_Elements[index + 2],
+                               m_Elements[index + 3]);
             }
 
             matrix4& multiply(const matrix4& other);
