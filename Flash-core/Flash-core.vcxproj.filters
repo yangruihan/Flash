@@ -21,9 +21,15 @@
     <ClCompile Include="src\graphics\window.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\math\vector2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\graphics\window.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vector2.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
