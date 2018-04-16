@@ -36,6 +36,9 @@
     <ClCompile Include="src\graphics\window.cpp">
       <Filter>源文件\graphic</Filter>
     </ClCompile>
+    <ClCompile Include="src\math\matrix4.cpp">
+      <Filter>源文件\math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\math\vector2.h">
@@ -49,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="src\graphics\window.h">
       <Filter>源文件\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\math.h">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\matrix4.hpp">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\math_func.hpp">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,8 +19,9 @@ namespace flash
 
             inline void setX(const float& x) { m_X = x; }
             inline void setY(const float& y) { m_Y = y; }
-            inline float getX() { return m_X; }
-            inline float getY() { return m_Y; }
+
+            inline float getX() const { return m_X; }
+            inline float getY() const { return m_Y; }
 
             vector2& add(const vector2& other);
             vector2& subtract(const vector2& other);

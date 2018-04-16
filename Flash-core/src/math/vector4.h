@@ -24,10 +24,10 @@ namespace flash
             inline void setZ(const float& z) { m_Z = z; }
             inline void setW(const float& w) { m_W = w; }
 
-            inline float getX() { return m_X; }
-            inline float getY() { return m_Y; }
-            inline float getZ() { return m_Z; }
-            inline float getW() { return m_W; }
+            inline float getX() const { return m_X; }
+            inline float getY() const { return m_Y; }
+            inline float getZ() const { return m_Z; }
+            inline float getW() const { return m_W; }
 
             vector4& add(const vector4& other);
             vector4& subtract(const vector4& other);

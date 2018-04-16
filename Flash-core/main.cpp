@@ -1,5 +1,5 @@
 #include "src/graphics/window.h"
-#include "src/math/vector2.h"
+#include "src/math/math.h"
 
 int main()
 {
@@ -19,6 +19,9 @@ int main()
     std::cout << v1 - v2 << " " << v1 << v2;
     std::cout << v1 * v2 << " " << v1 << v2;
     std::cout << v1 / v2 << " " << v1 << v2;
+
+    matrix4 position = matrix4::translation(vector3(2, 3, 4));
+    position *= matrix4::identity();
 
     while (!window.closed())
     {
