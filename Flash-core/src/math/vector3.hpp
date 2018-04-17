@@ -38,6 +38,7 @@ namespace flash
                     return z;
                 default: 
                     // todo create exception class to replace this
+                    // http://en.cppreference.com/w/cpp/error/exception
                     throw "index out of range";
                 }
             }

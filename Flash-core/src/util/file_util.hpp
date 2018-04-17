@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 
 namespace flash
@@ -12,11 +11,12 @@ namespace flash
         public:
             static bool read_file(const char* file_path, std::string &result)
             {
-                FILE* file;
-                fopen_s(&file, file_path, "r");
+                FILE* file = nullptr;
+                auto errno_t = fopen_s(&file, file_path, "r+");
 
                 if (file == nullptr)
                 {
+                    // todo log error info
                     return false;
                 }
 
@@ -33,6 +33,24 @@ namespace flash
                 result.assign(content, size);
 
                 delete[] content;
+                return true;
+            }
+
+            static bool write_file(const char* file_path, const std::string& content)
+            {
+                FILE* file = nullptr;
+                auto errno_t = fopen_s(&file, file_path, "w+");
+
+                if (file == nullptr)
+                {
+                    // todo log error info
+                    return false;
+                }
+
+                const auto content_chars = content.c_str();
+
+                fwrite(content_chars, sizeof(char), content.size(), file);
+                fclose(file);
                 return true;
             }
         };

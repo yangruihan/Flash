@@ -18,12 +18,6 @@ int main()
     vector2 v1(1, 3);
     vector2 v2(2, 4);
 
-    string file_content;
-
-    FileUtil::read_file("src/shader/test.txt", file_content);
-
-    std::cout << file_content;
-
     while (!window.closed())
     {
         window.getMousePos(x, y);
