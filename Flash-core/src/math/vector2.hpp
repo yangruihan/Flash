@@ -8,20 +8,14 @@ namespace flash
     {
         struct vector2
         {
-        private:
-            float m_X, m_Y;
+        public:
+            float x, y;
 
         public:
             vector2();
             vector2(const float& x, const float& y);
             
             ~vector2();
-
-            inline void setX(const float& x) { m_X = x; }
-            inline void setY(const float& y) { m_Y = y; }
-
-            inline float getX() const { return m_X; }
-            inline float getY() const { return m_Y; }
 
             vector2& add(const vector2& other);
             vector2& subtract(const vector2& other);
@@ -30,6 +24,20 @@ namespace flash
 
             bool operator==(const vector2& other) const;
             bool operator!=(const vector2& other) const;
+
+            float& operator[](const size_t i)
+            {
+                switch (i)
+                {
+                case 0:
+                    return x;
+                case 1:
+                    return y;
+                default: 
+                    // todo create exception class to replace this
+                    throw "index out of range";
+                }
+            }
 
             vector2& operator+=(const vector2& other);
             vector2& operator-=(const vector2& other);

@@ -19,6 +19,12 @@
     <Filter Include="源文件\graphic">
       <UniqueIdentifier>{38cc4179-750b-47c4-8aae-5e9a7c1d9655}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\util">
+      <UniqueIdentifier>{31385a78-3eb1-4af4-94ee-8fc5b295835b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\shader">
+      <UniqueIdentifier>{2fdc953f-9225-4067-b063-8e59e61e8c02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,15 +47,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\math\vector2.h">
-      <Filter>源文件\math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\math\vector3.h">
-      <Filter>源文件\math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\math\vector4.h">
-      <Filter>源文件\math</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\window.h">
       <Filter>源文件\graphic</Filter>
     </ClInclude>
@@ -62,5 +59,22 @@
     <ClInclude Include="src\math\math_func.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\math\vector2.hpp">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vector3.hpp">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vector4.hpp">
+      <Filter>源文件\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\file_util.hpp">
+      <Filter>源文件\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\shader\test.txt">
+      <Filter>源文件\shader</Filter>
+    </Text>
   </ItemGroup>
 </Project>

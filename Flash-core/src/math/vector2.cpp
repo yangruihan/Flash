@@ -1,4 +1,4 @@
-#include "vector2.h"
+#include "vector2.hpp"
 
 namespace flash
 {
@@ -6,51 +6,49 @@ namespace flash
     {
         vector2::vector2()
         {
-            m_X = 0.0f;
-            m_Y = 0.0f;
+            x = 0.0f;
+            y = 0.0f;
         }
 
         vector2::vector2(const float& x, const float& y)
         {
-            m_X = x;
-            m_Y = y;
+            this->x = x;
+            this->y = y;
         }
 
-        vector2::~vector2()
-        {
-        }
+        vector2::~vector2() = default;
 
         vector2& vector2::add(const vector2& other)
         {
-            m_X += other.m_X;
-            m_Y += other.m_Y;
+            x += other.x;
+            y += other.y;
             return *this;
         }
 
         vector2& vector2::subtract(const vector2& other)
         {
-            m_X -= other.m_X;
-            m_Y -= other.m_Y;
+            x -= other.x;
+            y -= other.y;
             return *this;
         }
 
         vector2& vector2::multiply(const vector2& other)
         {
-            m_X *= other.m_X;
-            m_Y *= other.m_Y;
+            x *= other.x;
+            y *= other.y;
             return *this;
         }
 
         vector2& vector2::divide(const vector2& other)
         {
-            m_X /= other.m_X;
-            m_Y /= other.m_Y;
+            x /= other.x;
+            y /= other.y;
             return *this;
         }
 
         bool vector2::operator==(const vector2& other) const
         {
-            return other.m_X == m_X && other.m_Y == m_Y;
+            return other.x == x && other.y == y;
         }
 
         bool vector2::operator!=(const vector2& other) const
@@ -100,14 +98,14 @@ namespace flash
 
         std::ostream& operator<<(std::ostream& stream, const vector2& vector2)
         {
-            stream << "(" << vector2.m_X << ", " << vector2.m_Y << ")" << std::endl;
+            stream << "(" << vector2.x << ", " << vector2.y << ")" << std::endl;
             return stream;
         }
 
         std::istream& operator>>(std::istream& stream, vector2& vector2)
         {
-            stream >> vector2.m_X;
-            stream >> vector2.m_Y;
+            stream >> vector2.x;
+            stream >> vector2.y;
             return stream;
         }
     }

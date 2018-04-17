@@ -1,4 +1,4 @@
-#include "vector3.h"
+#include "vector3.hpp"
 
 namespace flash
 {
@@ -6,66 +6,64 @@ namespace flash
     {
         vector3::vector3()
         {
-            m_X = 0.0f;
-            m_Y = 0.0f;
-            m_Z = 0.0f;
+            x = 0.0f;
+            y = 0.0f;
+            z = 0.0f;
         }
 
         vector3::vector3(const float& x, const float& y)
         {
-            m_X = x;
-            m_Y = y;
-            m_Z = 0.0f;
+            this->x = x;
+            this->y = y;
+            this->z = 0.0f;
         }
 
         vector3::vector3(const float& x, const float& y, const float& z)
         {
-            m_X = x;
-            m_Y = y;
-            m_Z = z;
+            this->x = x;
+            this->y = y;
+            this->z = z;
         }
 
-        vector3::~vector3()
-        {
-        }
+        vector3::~vector3() = default;
 
         vector3& vector3::add(const vector3& other)
         {
-            m_X += other.m_X;
-            m_Y += other.m_Y;
-            m_Z += other.m_Z;
+            x += other.x;
+            y += other.y;
+            z += other.z;
             return *this;
         }
 
         vector3& vector3::subtract(const vector3& other)
         {
-            m_X -= other.m_X;
-            m_Y -= other.m_Y;
-            m_Z -= other.m_Z;
+            x -= other.x;
+            y -= other.y;
+            z -= other.z;
             return *this;
         }
 
         vector3& vector3::multiply(const vector3& other)
         {
-            m_X *= other.m_X;
-            m_Y *= other.m_Y;
-            m_Z *= other.m_Z;
+            x *= other.x;
+            y *= other.y;
+            z *= other.z;
             return *this;
         }
 
         vector3& vector3::divide(const vector3& other)
         {
-            m_X /= other.m_X;
-            m_Y /= other.m_Y;
-            m_Z /= other.m_Z;
+            x /= other.x;
+            y /= other.y;
+            z /= other.z;
             return *this;
         }
 
         bool vector3::operator==(const vector3& other) const
         {
-            return other.m_X == m_X 
-                   && other.m_Y == m_Y
-                   && other.m_Z == m_Z;
+            return other.x == x 
+                   && other.y == y
+                   && other.z == z;
         }
 
         bool vector3::operator!=(const vector3& other) const
@@ -115,18 +113,18 @@ namespace flash
 
         std::ostream& operator<<(std::ostream& stream, const vector3& vector3)
         {
-            stream << "(" << vector3.m_X 
-                   << ", " << vector3.m_Y 
-                   << ", " << vector3.m_Z 
+            stream << "(" << vector3.x 
+                   << ", " << vector3.y 
+                   << ", " << vector3.z 
                    << ")" << std::endl;
             return stream;
         }
 
         std::istream& operator>>(std::istream& stream, vector3& vector3)
         {
-            stream >> vector3.m_X;
-            stream >> vector3.m_Y;
-            stream >> vector3.m_Z;
+            stream >> vector3.x;
+            stream >> vector3.y;
+            stream >> vector3.z;
             return stream;
         }
     }

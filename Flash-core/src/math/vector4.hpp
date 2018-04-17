@@ -8,8 +8,8 @@ namespace flash
     {
         struct vector4
         {
-        private:
-            float m_X, m_Y, m_Z, m_W;
+        public:
+            float x, y, z, w;
 
         public:
             vector4();
@@ -19,16 +19,6 @@ namespace flash
             
             ~vector4();
 
-            inline void setX(const float& x) { m_X = x; }
-            inline void setY(const float& y) { m_Y = y; }
-            inline void setZ(const float& z) { m_Z = z; }
-            inline void setW(const float& w) { m_W = w; }
-
-            inline float getX() const { return m_X; }
-            inline float getY() const { return m_Y; }
-            inline float getZ() const { return m_Z; }
-            inline float getW() const { return m_W; }
-
             vector4& add(const vector4& other);
             vector4& subtract(const vector4& other);
             vector4& multiply(const vector4& other);
@@ -36,6 +26,24 @@ namespace flash
 
             bool operator==(const vector4& other) const;
             bool operator!=(const vector4& other) const;
+
+            float& operator[](const size_t i)
+            {
+                switch (i)
+                {
+                case 0:
+                    return x;
+                case 1:
+                    return y;
+                case 2:
+                    return z;
+                case 3:
+                    return w;
+                default:
+                    // todo create exception class to replace this
+                    throw "index out of range";
+                }
+            }
 
             vector4& operator+=(const vector4& other);
             vector4& operator-=(const vector4& other);

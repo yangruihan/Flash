@@ -1,11 +1,14 @@
 #include "src/graphics/window.h"
 #include "src/math/math.h"
+#include "src/util/file_util.hpp"
 
 int main()
 {
     using namespace flash;
     using namespace graphics;
     using namespace math;
+    using namespace util;
+    using namespace std;
 
     Window window("hello world", 600, 400);
 
@@ -15,19 +18,17 @@ int main()
     vector2 v1(1, 3);
     vector2 v2(2, 4);
 
-    std::cout << v1 + v2 << " " << v1 << v2;
-    std::cout << v1 - v2 << " " << v1 << v2;
-    std::cout << v1 * v2 << " " << v1 << v2;
-    std::cout << v1 / v2 << " " << v1 << v2;
+    string file_content;
 
-    matrix4 position = matrix4::translation(vector3(2, 3, 4));
-    position *= matrix4::identity();
+    FileUtil::read_file("src/shader/test.txt", file_content);
+
+    std::cout << file_content;
 
     while (!window.closed())
     {
         window.getMousePos(x, y);
-        v.setX(x);
-        v.setY(y);
+        v.x = x;
+        v.y = y;
         std::cout << v;
 
         window.clear();

@@ -1,4 +1,4 @@
-#include "vector4.h"
+#include "vector4.hpp"
 
 namespace flash
 {
@@ -6,82 +6,80 @@ namespace flash
     {
         vector4::vector4()
         {
-            m_X = 0.0f;
-            m_Y = 0.0f;
-            m_Z = 0.0f;
-            m_W = 0.0f;
+            this->x = 0.0f;
+            this->y = 0.0f;
+            this->z = 0.0f;
+            this->w = 0.0f;
         }
 
         vector4::vector4(const float& x, const float& y)
         {
-            m_X = x;
-            m_Y = y;
-            m_Z = 0.0f;
-            m_W = 0.0f;
+            this->x = x;
+            this->y = y;
+            this->z = 0.0f;
+            this->w = 0.0f;
         }
 
         vector4::vector4(const float& x, const float& y, const float& z)
         {
-            m_X = x;
-            m_Y = y;
-            m_Z = z;
-            m_W = 0.0f;
+            this->x = x;
+            this->y = y;
+            this->z = z;
+            this->w = 0.0f;
         }
 
         vector4::vector4(const float& x, const float& y, const float& z, const float& w)
         {
-            m_X = x;
-            m_Y = y;
-            m_Z = z;
-            m_W = w;
+            this->x = x;
+            this->y = y;
+            this->z = z;
+            this->w = w;
         }
 
-        vector4::~vector4()
-        {
-        }
+        vector4::~vector4() = default;
 
         vector4& vector4::add(const vector4& other)
         {
-            m_X += other.m_X;
-            m_Y += other.m_Y;
-            m_Z += other.m_Z;
-            m_W += other.m_W;
+            x += other.x;
+            y += other.y;
+            z += other.z;
+            w += other.w;
             return *this;
         }
 
         vector4& vector4::subtract(const vector4& other)
         {
-            m_X -= other.m_X;
-            m_Y -= other.m_Y;
-            m_Z -= other.m_Z;
-            m_W -= other.m_W;
+            x -= other.x;
+            y -= other.y;
+            z -= other.z;
+            w -= other.w;
             return *this;
         }
 
         vector4& vector4::multiply(const vector4& other)
         {
-            m_X *= other.m_X;
-            m_Y *= other.m_Y;
-            m_Z *= other.m_Z;
-            m_W *= other.m_W;
+            x *= other.x;
+            y *= other.y;
+            z *= other.z;
+            w *= other.w;
             return *this;
         }
 
         vector4& vector4::divide(const vector4& other)
         {
-            m_X /= other.m_X;
-            m_Y /= other.m_Y;
-            m_Z /= other.m_Z;
-            m_W /= other.m_W;
+            x /= other.x;
+            y /= other.y;
+            z /= other.z;
+            w /= other.w;
             return *this;
         }
 
         bool vector4::operator==(const vector4& other) const
         {
-            return other.m_X == m_X 
-                   && other.m_Y == m_Y
-                   && other.m_Z == m_Z
-                   && other.m_W == m_W;
+            return other.x == x 
+                   && other.y == y
+                   && other.z == z
+                   && other.w == w;
         }
 
         bool vector4::operator!=(const vector4& other) const
@@ -131,20 +129,20 @@ namespace flash
 
         std::ostream& operator<<(std::ostream& stream, const vector4& vector4)
         {
-            stream << "(" << vector4.m_X 
-                   << ", " << vector4.m_Y 
-                   << ", " << vector4.m_Z 
-                   << ", " << vector4.m_W
+            stream << "(" << vector4.x 
+                   << ", " << vector4.y 
+                   << ", " << vector4.z 
+                   << ", " << vector4.w
                    << ")" << std::endl;
             return stream;
         }
 
         std::istream& operator>>(std::istream& stream, vector4& vector4)
         {
-            stream >> vector4.m_X;
-            stream >> vector4.m_Y;
-            stream >> vector4.m_Z;
-            stream >> vector4.m_W;
+            stream >> vector4.x;
+            stream >> vector4.y;
+            stream >> vector4.z;
+            stream >> vector4.w;
             return stream;
         }
     }
