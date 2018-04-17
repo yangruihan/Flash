@@ -1,8 +1,8 @@
-#include "window.h"
+#include "window.hpp"
 
 namespace flash
 {
-    namespace graphics
+    namespace graphic
     {
         bool    Window::m_Keys[MAX_KEY_COUNT];
         bool    Window::m_MouseButtons[MAX_MOUSE_BUTTON_COUNT];

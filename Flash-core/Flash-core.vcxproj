@@ -133,14 +133,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\graphics\window.cpp" />
+    <ClCompile Include="src\graphic\shader.cpp" />
+    <ClCompile Include="src\graphic\window.cpp" />
     <ClCompile Include="src\math\matrix4.cpp" />
     <ClCompile Include="src\math\vector2.cpp" />
     <ClCompile Include="src\math\vector3.cpp" />
     <ClCompile Include="src\math\vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\graphics\window.h" />
+    <ClInclude Include="src\graphic\shader.hpp" />
+    <ClInclude Include="src\graphic\window.hpp" />
     <ClInclude Include="src\math\math.h" />
     <ClInclude Include="src\math\math_func.hpp" />
     <ClInclude Include="src\math\matrix4.hpp" />
@@ -150,7 +152,8 @@
     <ClInclude Include="src\util\file_util.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="src\shader\test.txt" />
+    <None Include="src\shaders\basic.frag" />
+    <None Include="src\shaders\basic.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

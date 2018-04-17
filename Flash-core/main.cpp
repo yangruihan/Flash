@@ -1,11 +1,12 @@
-#include "src/graphics/window.h"
+#include "src/graphic/window.hpp"
+#include "src/graphic/shader.hpp"
 #include "src/math/math.h"
 #include "src/util/file_util.hpp"
 
 int main()
 {
     using namespace flash;
-    using namespace graphics;
+    using namespace graphic;
     using namespace math;
     using namespace util;
     using namespace std;
@@ -15,8 +16,8 @@ int main()
     double x, y;
     vector2 v;
 
-    vector2 v1(1, 3);
-    vector2 v2(2, 4);
+    Shader shader("src/shaders/basic.vert", "src/shaders/basic.frag");
+    shader.enable();
 
     while (!window.closed())
     {

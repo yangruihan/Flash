@@ -39,17 +39,17 @@
     <ClCompile Include="src\math\vector4.cpp">
       <Filter>源文件\math</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\window.cpp">
-      <Filter>源文件\graphic</Filter>
-    </ClCompile>
     <ClCompile Include="src\math\matrix4.cpp">
       <Filter>源文件\math</Filter>
     </ClCompile>
+    <ClCompile Include="src\graphic\shader.cpp">
+      <Filter>源文件\graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphic\window.cpp">
+      <Filter>源文件\graphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\graphics\window.h">
-      <Filter>源文件\graphic</Filter>
-    </ClInclude>
     <ClInclude Include="src\math\math.h">
       <Filter>源文件\math</Filter>
     </ClInclude>
@@ -71,10 +71,19 @@
     <ClInclude Include="src\util\file_util.hpp">
       <Filter>源文件\util</Filter>
     </ClInclude>
+    <ClInclude Include="src\graphic\shader.hpp">
+      <Filter>源文件\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphic\window.hpp">
+      <Filter>源文件\graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="src\shader\test.txt">
+    <None Include="src\shaders\basic.frag">
       <Filter>源文件\shader</Filter>
-    </Text>
+    </None>
+    <None Include="src\shaders\basic.vert">
+      <Filter>源文件\shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
